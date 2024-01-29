@@ -11,6 +11,9 @@ Run the tutorial: [![Open In Colab](https://colab.research.google.com/assets/col
 * Leonardo Barzaghi
 * Judith Cueto Fernandez
 * Jilmen Quintiens
+* Lee Youngjun
+* Jukka Hirvasniemi
+* Gianluca Iori
 
 ## Acknowledgement
 
