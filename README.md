@@ -2,6 +2,9 @@
 
 This is a package for reading and writing a standardized data format for muscle MR imaging that is based on BIDS.
 
+[![GitHub license](https://img.shields.io/github/license/ormir-mids/ormir-mids)](https://github.com/ormir-mids/ormir-mids/blob/main/LICENSE)
+
+## Tutorial
 Run the tutorial: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/muscle-bids/muscle-bids/blob/main/jupyter/Muscle-bids_dcm2mbids.ipynb)
 
 ## Main contributors
