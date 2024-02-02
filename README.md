@@ -39,7 +39,7 @@ Now we can install the package using `pip`. This will also install the required 
 ```shell
 cd ormir-bids
 pip install .
-!pip install --upgrade nibabel # the default nibabel has bugs
+pip install --upgrade nibabel # the default nibabel has bugs
 ```
 
 ## Usage
