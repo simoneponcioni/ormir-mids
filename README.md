@@ -1,5 +1,5 @@
 # ormir-bids
-<p align="center"> I/O of standardized data formats for Open and Reproducible Musculoskeletal Imaging Research ([ORMIR](https://ormircommunity.github.io/)). Based on the [BIDS](https://bids.neuroimaging.io/) data structure. </p>
+I/O of standardized data formats for Open and Reproducible Musculoskeletal Imaging Research ([ORMIR](https://ormircommunity.github.io/)). Based on the [BIDS](https://bids.neuroimaging.io/) data structure.
 
 > [!NOTE]  
 > This package is a fork of [muscle-bids](https://github.com/muscle-bids/muscle-bids) for muscle MR imaging data.
