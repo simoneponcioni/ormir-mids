@@ -67,5 +67,6 @@ class SequenceConverterProducerMagnitude(Converter):
         
         # the dicoms are grouped into separate files based on a characteristics ('Echo time' in this case)
         med_volume_out = group(med_volume, 'EchoTime')
+        # add other information here?
 
         return med_volume_out
