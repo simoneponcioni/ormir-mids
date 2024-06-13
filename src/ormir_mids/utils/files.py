@@ -57,6 +57,26 @@ def deserialize_dict(data: dict) -> dict:
     return json.loads(json_str)
 
 
+
+def load_json(filepath: [str, Path]) -> object:
+    """ Load a JSON Object compressed as a binary fname or path
+
+    Parameters
+    ----------
+    filepath: str, Path
+        File name of JSON fname we want to load.
+
+    Returns
+    ----------
+    image_slice: Object
+        Python object loaded be serialized into a JSON Object.
+    """
+    try :
+        with open(filepath, 'rt', encoding='UTF-8') as f:
+            return json.load(f)
+    except:
+        return dict()
+
 def save_json(data: object, filename: [str,Path],  path: Optional[Union[str,Path]]='', sort: Optional[bool]=False)-> None:
     """ Save a Python Object as JSON series_description fname
 
