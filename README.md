@@ -55,7 +55,7 @@ dcm2mbids -h
 
 To use `ormir-mids` within Python, import the following modules
 ```python
-from muscle_bids.utils.io import find_bids, load_bids
+from ormir_mids.utils.io import find_bids, load_bids
 import nibabel as nib
 ```
 
@@ -68,7 +68,7 @@ For a detailed description of how to use `ormir-mids` see the following notebook
 - Load a DICOM file to a MedicalVolume object
 
 ```python
-from muscle_bids.utils.io import load_dicom
+from ormir_mids.utils.io import load_dicom
 ```
 ```python
 mv = load_dicom('<Path-to-DICOM-file>')
@@ -93,4 +93,4 @@ Examples of how to use `ormir-mids` for common data handling, image manipulation
 This package was developed thanks to the support of the JCMSK community during the Maastricht 2022 workshop and hackaton “Building the Jupyter Community in Musculoskeletal Imaging Research”.
 
 Image I/O is based on [DOSMA](https://github.com/ad12/DOSMA) by Arjun Desai. A stripped-down version of DOSMA is present
-in muscle-bids/dosma_io.
+in src/ormir_mids/dosma_io.
