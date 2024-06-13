@@ -58,3 +58,20 @@ def remove_nonalphanumeric(text: str):
     except:
         text = ''
     return text
+
+
+def extract_number(filename, pattern ='\\d+', default=0):
+    """
+    Extracts the first number from the file path using a regular expression.
+
+    Parameters:
+    - file_path: The path of the file as a string.
+
+    Returns:
+    - The extracted case number as a string, zero-padded to three digits.
+    """
+    # Regex pattern to find the first number followed by one or more digits
+    match = re.search(pattern, filename)
+    if match:
+        return str(match.group(0)).zfill(3)  # Zero-pad the case number to three digits
+    return str(default).zfill(3)  # Return a default value if no match is found
