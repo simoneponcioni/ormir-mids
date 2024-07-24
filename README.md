@@ -91,9 +91,11 @@ mv_itk = mv.to_sitk()
 Examples of how to use `ormir-mids` for common data handling, image manipulation and processing tasks within Python can be found in this notebook
 #### [ormir-mids usage: MedicalVolume class](examples/jupyter/Muscle-bids_MedicalVolume_tests.ipynb) [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](examples/jupyter/Muscle-bids_MedicalVolume_tests.ipynb)
 
+
+
 ## Acknowledgement
 
-This package was developed thanks to the support of the JCMSK community during the Maastricht 2022 workshop and hackaton “Building the Jupyter Community in Musculoskeletal Imaging Research”.
+The development of ORMIR-MIDS specification and package started during the 2nd [ORMIR](https://ormircommunity.github.io/) workshop [Sharing and Curating Open Data in Musculoskeletal Imaging Research](https://github.com/ORMIRcommunity/2024_2nd_ORMIR_WS/blob/main/README.md) and is currently ongoing. ORMIR-MIDS is an extension of [muscle-BIDS](https://github.com/muscle-bids/muscle-bids), which was partly developed during the 1st [ORMIR](https://ormircommunity.github.io/) workshop [Building the Jupyter Community in Musculoskeletal Imaging Research](https://github.com/JCMSK/2022_JCW/blob/main/README.md). 
 
 Image I/O is based on [DOSMA](https://github.com/ad12/DOSMA) by Arjun Desai. A stripped-down version of DOSMA is present
 in src/ormir_mids/dosma_io.
