@@ -49,7 +49,7 @@ pip install --upgrade nibabel # the default nibabel has bugs
 1. Running `dcm2mbids` as an executable to convert DICOM data to the MIDS format.
 2. Importing `ormir-mids` as a Python module to find, load, and interrogate ORMIR-MIDS-format data.
 
-### 1. Converting DICOMs to the ORMIR-MIDS format
+### 1. Converting DICOMs to the ORMIR-MIDS structure
 
 The commandline script is called `dcm2mbids.exe`. To view the commandline script help type
 ```commandline
@@ -66,7 +66,7 @@ For a detailed description of how to use `ormir-mids` see the following notebook
 #### [ormir-mids usage: dcm2mbids](examples/jupyter/Muscle-bids_dcm2mbids.ipynb) [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](examples/jupyter/Muscle-bids_dcm2mbids.ipynb)
 
 ### 2. Exploring medical volumes with ORMIR-MIDS
-`ormir-mids` can be used within Python to load, manipule and visualize medical volume datasets, without convertion to the BIDS format.
+`ormir-mids` can be used within Python to load, manipulate, and visualize medical volume datasets, without having to convert them to the ORMIR-MIDS structure.
 
 - Load a DICOM file to a MedicalVolume object
 
