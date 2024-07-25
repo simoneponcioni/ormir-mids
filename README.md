@@ -19,6 +19,7 @@ Run the tutorial: [![Open In Colab](https://colab.research.google.com/assets/col
 * Lee Youngjun
 * Jukka Hirvasniemi
 * Gianluca Iori
+* Serena Bonaretti
 
 ## Installation
 
@@ -45,8 +46,10 @@ pip install --upgrade nibabel # the default nibabel has bugs
 ## Usage
 `ormir-mids` can be used in two ways: 
     
-1. Running `dcm2mbids` as an executable to convert DICOM data to the BIDS format.
-2. Importing `ormir-mids` as a Python module to find, load, and interrogate BIDS-format data.
+1. Running `dcm2mbids` as an executable to convert DICOM data to the MIDS format.
+2. Importing `ormir-mids` as a Python module to find, load, and interrogate ORMIR-MIDS-format data.
+
+### 1. Converting DICOMs to the ORMIR-MIDS structure
 
 The commandline script is called `dcm2mbids.exe`. To view the commandline script help type
 ```commandline
@@ -62,8 +65,8 @@ import nibabel as nib
 For a detailed description of how to use `ormir-mids` see the following notebook
 #### [ormir-mids usage: dcm2mbids](examples/jupyter/Muscle-bids_dcm2mbids.ipynb) [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](examples/jupyter/Muscle-bids_dcm2mbids.ipynb)
 
-### Medical volume manipulation within Pyhon
-`ormir-mids` can be used within Python to load, manipule and visualize medical volume datasets, without convertion to the BIDS format.
+### 2. Exploring medical volumes with ORMIR-MIDS
+`ormir-mids` can be used within Python to load, manipulate, and visualize medical volume datasets, without having to convert them to the ORMIR-MIDS structure.
 
 - Load a DICOM file to a MedicalVolume object
 
@@ -88,9 +91,11 @@ mv_itk = mv.to_sitk()
 Examples of how to use `ormir-mids` for common data handling, image manipulation and processing tasks within Python can be found in this notebook
 #### [ormir-mids usage: MedicalVolume class](examples/jupyter/Muscle-bids_MedicalVolume_tests.ipynb) [![Made withJupyter](https://img.shields.io/badge/Made%20with-Jupyter-orange?style=for-the-badge&logo=Jupyter)](examples/jupyter/Muscle-bids_MedicalVolume_tests.ipynb)
 
+
+
 ## Acknowledgement
 
-This package was developed thanks to the support of the JCMSK community during the Maastricht 2022 workshop and hackaton “Building the Jupyter Community in Musculoskeletal Imaging Research”.
+The development of ORMIR-MIDS specification and package started during the 2nd [ORMIR](https://ormircommunity.github.io/) workshop [Sharing and Curating Open Data in Musculoskeletal Imaging Research](https://github.com/ORMIRcommunity/2024_2nd_ORMIR_WS/blob/main/README.md) and is currently ongoing. ORMIR-MIDS is an extension of [muscle-BIDS](https://github.com/muscle-bids/muscle-bids), which was partly developed during the 1st [ORMIR](https://ormircommunity.github.io/) workshop [Building the Jupyter Community in Musculoskeletal Imaging Research](https://github.com/JCMSK/2022_JCW/blob/main/README.md). 
 
 Image I/O is based on [DOSMA](https://github.com/ad12/DOSMA) by Arjun Desai. A stripped-down version of DOSMA is present
 in src/ormir_mids/dosma_io.
