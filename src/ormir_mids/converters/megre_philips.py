@@ -37,7 +37,7 @@ def _test_ima_type(med_volume: MedicalVolume, ima_type: int):
     Returns:
         bool: True if the MedicalVolume is of the given type, False otherwise.
     """
-    ima_type_list = get_raw_tag_value(med_volume, '0043102F')
+    ima_type_list = get_raw_tag_value(med_volume, '00089208')
     flat_ima_type = [x for xs in ima_type_list for x in xs]
 
     if ima_type in flat_ima_type:
@@ -78,7 +78,7 @@ def _get_image_indices(med_volume: MedicalVolume):
                  'imaginary': []
                  }
 
-    ima_type_list = get_raw_tag_value(med_volume, '0043102F')
+    ima_type_list = get_raw_tag_value(med_volume, '00089208')  # DC-3T: Or 00080008 for Classic DICOM?
     flat_ima_type = [x for xs in ima_type_list for x in xs]
 
     scanning_sequence_list = med_volume.bids_header['ScanningSequence']
@@ -86,13 +86,13 @@ def _get_image_indices(med_volume: MedicalVolume):
         scanning_sequence_list = [scanning_sequence_list] * len(flat_ima_type)
 
     for i in range(len(flat_ima_type)):
-        if flat_ima_type[i] == 0 and scanning_sequence_list[i] == 'GR':
+        if flat_ima_type[i] == 'MAGNITUDE' and scanning_sequence_list[i] == 'GR':
             ima_index['magnitude'].append(i)
-        elif flat_ima_type[i] == 1 and scanning_sequence_list[i] == 'GR':
+        elif flat_ima_type[i] == 'PHASE' and scanning_sequence_list[i] == 'GR':
             ima_index['phase'].append(i)
-        elif flat_ima_type[i] == 2 and scanning_sequence_list[i] == 'GR':
+        elif flat_ima_type[i] == 'REAL' and scanning_sequence_list[i] == 'GR':
             ima_index['real'].append(i)
-        elif flat_ima_type[i] == 3 and scanning_sequence_list[i] == 'GR':
+        elif flat_ima_type[i] == "IMAGINARY" and scanning_sequence_list[i] == 'GR':
             ima_index['imaginary'].append(i)
         elif scanning_sequence_list[i] == 'RM':
             ima_index['reco'].append(i)
