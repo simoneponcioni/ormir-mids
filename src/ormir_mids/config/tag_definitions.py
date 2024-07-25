@@ -117,4 +117,6 @@ defined_tags = TagDefinitionDict({
     '00181150': 'ExposureTime',
     '00181151': 'X-RayTubeCurrent'
 
+    #TODO: DC-3T - Add relevant tags for MEGRE-Philips/Siemens and MESE-GE
+
 })
