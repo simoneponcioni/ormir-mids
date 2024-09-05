@@ -1,10 +1,10 @@
-muscle-bids package
+muscle-bids.utils package
 ================================
 
 Module contents
 ---------------
 
-.. automodule:: muscle_bids
+.. automodule:: ormir_mids.utils
    :members:
    :undoc-members:
    :show-inheritance:

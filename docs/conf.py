@@ -14,13 +14,13 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-from muscle_bids import __version__ as package_version
+from ormir_mids import __version__ as package_version
 
 # -- Project information -----------------------------------------------------
 
-project = 'muscle-bids'
-copyright = '2023, Francesco Santini and the muscle-bids team'
-author = 'Francesco Santini'
+project = 'ormir-mids'
+copyright = '2024, ORMIR'
+author = 'ORMIR'
 
 # The full version, including alpha/beta/rc tags
 release = package_version

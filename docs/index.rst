@@ -10,8 +10,8 @@ Welcome to muscle-bids's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   muscle_bids
-   muscle_bids_utils
+   ormir_mids
+   ormir_mids_utils
 
 Indices and tables
 ==================
