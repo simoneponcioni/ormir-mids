@@ -1,4 +1,4 @@
-muscle-bids package
+ormir-mids package
 ================================
 
 Module contents
