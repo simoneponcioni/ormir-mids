@@ -14,7 +14,7 @@ def _is_megre_philips(med_volume: MedicalVolume):
     Returns:
         bool: True if the MedicalVolume is a MEGRE Philips dataset, False otherwise.
     """
-    if 'PHILIPS' not in get_manufacturer(med_volume):
+    if 'PHILIPS'.lower() not in get_manufacturer(med_volume).lower():
         return False
 
     scanning_sequence_list = med_volume.bids_header['ScanningSequence']
@@ -75,15 +75,17 @@ def _get_image_indices(med_volume: MedicalVolume):
     ima_index = {'magnitude': [],
                  'phase': [],
                  'real': [],
-                 'imaginary': []
+                 'imaginary': [],
+                 'reco': []
                  }
 
     ima_type_list = get_raw_tag_value(med_volume, '00089208')  # DC-3T: Or 00080008 for Classic DICOM?
     flat_ima_type = [x for xs in ima_type_list for x in xs]
 
     scanning_sequence_list = med_volume.bids_header['ScanningSequence']
-    if ~isinstance(scanning_sequence_list, list):
-        scanning_sequence_list = [scanning_sequence_list] * len(flat_ima_type)
+    # DCam - The below code causes errors. Remove?
+    #if ~isinstance(scanning_sequence_list, list):
+        #scanning_sequence_list = [scanning_sequence_list] * len(flat_ima_type)
 
     for i in range(len(flat_ima_type)):
         if flat_ima_type[i] == 'MAGNITUDE' and scanning_sequence_list[i] == 'GR':
@@ -274,7 +276,7 @@ class MeGreConverterPhilipsReconstructedMap(Converter):
 
     @classmethod
     def is_dataset_compatible(cls, med_volume: MedicalVolume):
-        if 'PHILIPS' not in get_manufacturer(med_volume):
+        if 'PHILIPS'.lower() not in get_manufacturer(med_volume).lower():
             return False
         scanning_sequence_list = med_volume.bids_header['ScanningSequence']
 

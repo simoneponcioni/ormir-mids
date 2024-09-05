@@ -16,7 +16,7 @@ def _is_megre_siemens(med_volume: MedicalVolume):
     Returns:
         bool: True if the MedicalVolume is a MEGRE Siemens dataset, False otherwise.
     """
-    if 'Siemens' not in get_manufacturer(med_volume):
+    if 'Siemens'.lower() not in get_manufacturer(med_volume).lower():
         return False
 
     scanning_sequence_list = med_volume.bids_header['ScanningSequence']
@@ -84,8 +84,9 @@ def _get_image_indices(med_volume: MedicalVolume):
     flat_ima_type = [x for xs in ima_type_list for x in xs]
 
     scanning_sequence_list = med_volume.bids_header['ScanningSequence']
-    if ~isinstance(scanning_sequence_list, list):
-        scanning_sequence_list = [scanning_sequence_list] * len(flat_ima_type)
+    # DCam - Code below causes errors? Enhanced DICOM?
+    # if ~isinstance(scanning_sequence_list, list):
+        # scanning_sequence_list = [scanning_sequence_list] * len(flat_ima_type)
 
     for i in range(len(flat_ima_type)):
         if flat_ima_type[i] == 0 and scanning_sequence_list[i] == 'GR':
@@ -276,7 +277,7 @@ class MeGreConverterSiemensReconstructedMap(Converter):
 
     @classmethod
     def is_dataset_compatible(cls, med_volume: MedicalVolume):
-        if 'Siemens' not in get_manufacturer(med_volume):
+        if 'Siemens'.lower() not in get_manufacturer(med_volume).lower():
             return False
         scanning_sequence_list = med_volume.bids_header['ScanningSequence']
 
