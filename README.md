@@ -28,7 +28,7 @@ To install `ormir-mids`, run the code below, noting this list of [dependencies](
 
 It is recommended to install `ormir-mids` in a separate virtual environment:
 ```commandline
-conda env create -n ormir-mids
+conda create -n ormir-mids python=3.9
 conda activate ormir-mids
 ```
 
