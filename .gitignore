@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# Project-specific files
+dicom/
+bids_output/
+
 # Distribution / packaging
 .Python
 build/
